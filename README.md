@@ -10,12 +10,63 @@ Via npm on Node:
 npm install simplelists
 ```
 
+You can include `lib/simplelists.js` directly into your HTML page. It declares the `sl` namespace.
+
 ## Usage
 
-Reference in your program:
-
+Reference in your Node.js program:
 ```javascript
 var sl = require('simplelists');
+```
+
+Given an array of objects:
+```javascript
+var list = [
+    { id: 1, name: 'Adam', age: 800, gender: 'man' },
+    { id: 2, name: 'Eve', age: 600, gender: 'woman' },
+    { id: 3, name: 'Abel', age: 500, gender: 'man' },
+    { id: 4, name: 'Caine', age: 400, gender: 'man' }
+];
+```
+
+Retrieve some fields:
+```javascript
+var result = sl.project(list, ['id', 'name']);
+```
+
+Retrieve only one fields:
+```javascript
+var result = sl.project(list, 'name');
+```
+
+Filter using query by example:
+```javascript
+var result = sl.where(list, { gender: 'man' });
+```
+
+Remove repeated values:
+```javascript
+var result = sl.unique(list, 'gender'); // Adam, Eve objects
+```
+
+Given another array of objects:
+```javascript
+var list2 = [
+    { id: 1, name: 'Adam', age: 800, gender: 'man' },
+    { id: 2, name: 'Eve', age: 600, gender: 'woman' },
+    { id: 5, name: 'Set', age: 300, gender: 'man' },
+    { id: 6, name: 'Sarah', age: 200, gender: 'woman' }
+];
+```
+
+Union:
+```javascript
+var result = sl.unique(list, list2 'gender'); // Adam, Eve, Abel, Caine, Set, Sahara objects
+```
+
+Difference:
+```javascript
+var result = sl.unique(list, list2, 'gender'); // Abel, Caine objects
 ```
 
 TBD
@@ -35,7 +86,7 @@ TBD
 
 ## Versions
 
-TBD
+- 0.0.1 Published
 
 ## Contribution
 
