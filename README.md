@@ -61,12 +61,12 @@ var list2 = [
 
 Union:
 ```javascript
-var result = sl.unique(list, list2 'gender'); // Adam, Eve, Abel, Caine, Set, Sahara objects
+var result = sl.union(list, list2 'gender'); // Adam, Eve, Abel, Caine, Set, Sahara objects
 ```
 
 Difference:
 ```javascript
-var result = sl.unique(list, list2, 'gender'); // Abel, Caine objects
+var result = sl.diff(list, list2, 'gender'); // Abel, Caine objects
 ```
 
 TBD
