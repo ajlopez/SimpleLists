@@ -20,4 +20,17 @@ exports['project name'] = function (test) {
         test.equal(Object.keys(result[k]).length, 1);
     }
 }
+
+exports['project only name'] = function (test) {
+    var result = sl.project(list, 'name');
+    
+    test.ok(result);
+    test.ok(Array.isArray(result));
+    test.equal(result.length, list.length);
+    
+    for (var k = 0; k < list.length; k++) {
+        test.equal(result[k].name, list[k].name);
+        test.equal(Object.keys(result[k]).length, 1);
+    }
+}
 exports['project id and name'] = function (test) {    var result = sl.project(list, ['id', 'name']);        test.ok(result);    test.ok(Array.isArray(result));    test.equal(result.length, list.length);        for (var k = 0; k < list.length; k++) {        test.equal(result[k].id, list[k].id);        test.equal(result[k].name, list[k].name);        test.equal(Object.keys(result[k]).length, 2);    }}
