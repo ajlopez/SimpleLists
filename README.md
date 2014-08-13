@@ -88,7 +88,8 @@ TBD
 
 - 0.0.1 Published
 - 0.0.2 Published, new functions: exist, count, first, ...
-- 0.0.3 Fixing package.json
+- 0.0.3 Published, fixing package.json
+- 0.0.4 Published, new function: aggr; project with rename
 
 ## Contribution
 
