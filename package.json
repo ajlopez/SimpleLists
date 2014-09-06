@@ -1,16 +1,13 @@
 { "name": "simplelists"
 , "description": "Simple functions for object arrays/lists in JavaScript"
 , "keywords": [ "javascript", "array", "list", "functions" ]
-, "version": "0.0.1"
+, "version": "0.0.4"
 , "author": "Angel 'Java' Lopez <webmaster@ajlopez.com> (http://www.ajlopez.com)"
 , "repository": { "type": "git", "url": "git://github.com/ajlopez/SimpleLists.git" }
 , "main": "./lib/simplelists.js"
 , "engines": { "node": ">= 0.6.0 && < 0.13.0" }
 , "scripts": {
     "test": "simpleunit ./test"
-  }
-, "bin": {
-    "simplelists": "./bin/simplelists"
   }
 , "dependencies": {
   }

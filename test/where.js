@@ -48,3 +48,19 @@ exports['where id is three and gender is man'] = function (test) {
     test.equal(result[0].id, 3);
     test.equal(result[0].gender, 'man');
 }
+
+exports['where with function'] = function (test) {
+    var result = sl.where(list, function (item) {
+        if (item.id % 2)
+            return true;
+        return false;
+    });
+    
+    test.ok(result);
+    test.ok(Array.isArray(result));
+    test.equal(result.length, 2);
+    
+    test.equal(result[0].id, 1);
+    test.equal(result[1].id, 3);
+}
+
