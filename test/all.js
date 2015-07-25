@@ -23,3 +23,7 @@ exports['all with age, name and parents'] = function (test) {
 exports['all with positive age'] = function (test) {
     test.ok(sl.all(list, function (obj) { return obj.age > 0; }));
 }
+
+exports['all with age, name and parents on empty objects list'] = function (test) {
+    test.ok(!sl.all([ {}, {} ], [ "age", "name", "parents" ]));
+}
