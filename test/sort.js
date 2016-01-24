@@ -17,4 +17,15 @@ exports['sort by name'] = function (test) {
     for (var k = 1; k < list.length; k++)
         test.ok(result[k - 1].name <= result[k].name);
 }
-exports['sort by age'] = function (test) {    var result = sl.sort(list, 'age');        test.ok(result);    test.ok(Array.isArray(result));    test.equal(result.length, list.length);    for (var k = 1; k < list.length; k++)        test.ok(result[k - 1].age <= result[k].age);}exports['sort by descending name'] = function (test) {    var result = sl.sort(list, 'name', true);        test.ok(result);    test.ok(Array.isArray(result));    test.equal(result.length, list.length);    for (var k = 1; k < list.length; k++)        test.ok(result[k - 1].name >= result[k].name);}
+exports['sort by age'] = function (test) {    var result = sl.sort(list, 'age');        test.ok(result);    test.ok(Array.isArray(result));    test.equal(result.length, list.length);    for (var k = 1; k < list.length; k++)        test.ok(result[k - 1].age <= result[k].age);}exports['sort by height and age'] = function (test) {
+    var result = sl.sort(list, ['height', 'age']);
+    
+    test.ok(result);
+    test.ok(Array.isArray(result));
+    test.equal(result.length, list.length);
+
+    for (var k = 1; k < list.length; k++)
+        test.ok(result[k - 1].age <= result[k].age);
+}
+
+exports['sort by descending name'] = function (test) {    var result = sl.sort(list, 'name', true);        test.ok(result);    test.ok(Array.isArray(result));    test.equal(result.length, list.length);    for (var k = 1; k < list.length; k++)        test.ok(result[k - 1].name >= result[k].name);}

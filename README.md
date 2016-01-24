@@ -91,6 +91,7 @@ TBD
 - 0.0.3 Published, fixing package.json
 - 0.0.4 Published, new function: aggr; project with rename
 - 0.0.5 Published, with intersect and all new functions
+- 0.0.6 Published, multicolumn sort
 
 ## Contribution
 
