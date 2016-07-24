@@ -10,7 +10,15 @@ exports['shuffle ten elements'] = function (test) {
     test.ok(Array.isArray(shuffled));
     test.equal(shuffled.length, 10);
     
-    for (var k = 0; k < 10; k++)
-        test.ok(shuffled.indexOf(k) >= 0);
+    var diff = 0;
+    
+    for (var k = 0; k < 10; k++) {
+        var index = shuffled.indexOf(k);
+        test.ok(index >= 0);
+        if (index != k)
+            diff++;
+    }
+    
+    test.ok(diff);
 };
 
