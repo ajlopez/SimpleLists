@@ -49,6 +49,16 @@ Remove repeated values:
 var result = sl.unique(list, 'gender'); // Adam, Eve objects
 ```
 
+Take:
+```javascript
+var result = sl.take(list, 2); // Adam, Eve
+```
+
+Shuffle:
+```javascript
+var result = sl.shuffle(list); // same elements in random order
+```
+
 Given another array of objects:
 ```javascript
 var list2 = [
@@ -68,6 +78,7 @@ Difference:
 ```javascript
 var result = sl.diff(list, list2, 'gender'); // Abel, Caine objects
 ```
+
 
 TBD
 
