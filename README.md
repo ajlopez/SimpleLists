@@ -103,6 +103,7 @@ TBD
 - 0.0.4 Published, new function: aggr; project with rename
 - 0.0.5 Published, with intersect and all new functions
 - 0.0.6 Published, multicolumn sort
+- 0.0.7 Published, take, shuffle
 
 ## Contribution
 
