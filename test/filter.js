@@ -8,8 +8,8 @@ var list = [
     { id: 4, name: 'Caine', age: 400, gender: 'man' }
 ];
 
-exports['where gender is man'] = function (test) {
-    var result = sl.where(list, { gender: 'man' });
+exports['filter gender is man'] = function (test) {
+    var result = sl.filter(list, { gender: 'man' });
     
     test.ok(result);
     test.ok(Array.isArray(result));
@@ -19,8 +19,8 @@ exports['where gender is man'] = function (test) {
         test.equal(result[k].gender, 'man');
 }
 
-exports['where gender is woman'] = function (test) {
-    var result = sl.where(list, { gender: 'woman' });
+exports['filter gender is woman'] = function (test) {
+    var result = sl.filter(list, { gender: 'woman' });
     
     test.ok(result);
     test.ok(Array.isArray(result));
@@ -30,16 +30,16 @@ exports['where gender is woman'] = function (test) {
         test.equal(result[k].gender, 'woman');
 }
 
-exports['where id is five'] = function (test) {
-    var result = sl.where(list, { id: 5 });
+exports['filter id is five'] = function (test) {
+    var result = sl.filter(list, { id: 5 });
     
     test.ok(result);
     test.ok(Array.isArray(result));
     test.equal(result.length, 0);
 }
 
-exports['where id is three and gender is man'] = function (test) {
-    var result = sl.where(list, { id: 3, gender: 'man' });
+exports['filter id is three and gender is man'] = function (test) {
+    var result = sl.filter(list, { id: 3, gender: 'man' });
     
     test.ok(result);
     test.ok(Array.isArray(result));
@@ -49,8 +49,8 @@ exports['where id is three and gender is man'] = function (test) {
     test.equal(result[0].gender, 'man');
 }
 
-exports['where with function'] = function (test) {
-    var result = sl.where(list, function (item) {
+exports['filter with function'] = function (test) {
+    var result = sl.filter(list, function (item) {
         if (item.id % 2)
             return true;
         return false;
