@@ -1,7 +1,7 @@
 
-var sl = require('..');
+const sl = require('..');
 
-var list = [
+const list = [
     { id: 1, name: 'Adam', age: 800, gender: 'man' },
     { id: 2, name: 'Eve', age: 600, gender: 'woman' },
     { id: 3, name: 'Abel', age: 500, gender: 'man' },
@@ -9,18 +9,18 @@ var list = [
 ];
 
 exports['unique id'] = function (test) {
-    var result = sl.unique(list, 'id');
+    const result = sl.unique(list, 'id');
     
     test.ok(result);
     test.ok(Array.isArray(result));
     test.equal(result.length, list.length);
     
-    for (var k = 0; k < result.length; k++)
+    for (let k = 0; k < result.length; k++)
         test.equal(result[k].id, list[k].id);
 }
 
 exports['unique genre'] = function (test) {
-    var result = sl.unique(list, 'gender');
+    const result = sl.unique(list, 'gender');
     
     test.ok(result);
     test.ok(Array.isArray(result));
