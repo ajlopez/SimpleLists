@@ -1,7 +1,7 @@
 
-var sl = require('..');
+const sl = require('..');
 
-var list = [
+const list = [
     { id: 1, name: 'Adam', age: 800, gender: 'man' },
     { id: 2, name: 'Eve', age: 600, gender: 'woman' },
     { id: 3, name: 'Abel', age: 500, gender: 'man' },
@@ -9,29 +9,29 @@ var list = [
 ];
 
 exports['filter gender is man'] = function (test) {
-    var result = sl.filter(list, { gender: 'man' });
+    const result = sl.filter(list, { gender: 'man' });
     
     test.ok(result);
     test.ok(Array.isArray(result));
     test.equal(result.length, 3);
     
-    for (var k = 0; k < result.length; k++)
+    for (let k = 0; k < result.length; k++)
         test.equal(result[k].gender, 'man');
 }
 
 exports['filter gender is woman'] = function (test) {
-    var result = sl.filter(list, { gender: 'woman' });
+    const result = sl.filter(list, { gender: 'woman' });
     
     test.ok(result);
     test.ok(Array.isArray(result));
     test.equal(result.length, 1);
     
-    for (var k = 0; k < result.length; k++)
+    for (let k = 0; k < result.length; k++)
         test.equal(result[k].gender, 'woman');
 }
 
 exports['filter id is five'] = function (test) {
-    var result = sl.filter(list, { id: 5 });
+    const result = sl.filter(list, { id: 5 });
     
     test.ok(result);
     test.ok(Array.isArray(result));
@@ -39,7 +39,7 @@ exports['filter id is five'] = function (test) {
 }
 
 exports['filter id is three and gender is man'] = function (test) {
-    var result = sl.filter(list, { id: 3, gender: 'man' });
+    const result = sl.filter(list, { id: 3, gender: 'man' });
     
     test.ok(result);
     test.ok(Array.isArray(result));
@@ -50,9 +50,10 @@ exports['filter id is three and gender is man'] = function (test) {
 }
 
 exports['filter with function'] = function (test) {
-    var result = sl.filter(list, function (item) {
+    const result = sl.filter(list, function (item) {
         if (item.id % 2)
             return true;
+        
         return false;
     });
     
