@@ -1,14 +1,14 @@
 
-var sl = require('..');
+const sl = require('..');
 
-var list = [
+const list = [
     { id: 1, name: 'Adam', age: 800, gender: 'man' },
     { id: 2, name: 'Eve', age: 600, gender: 'woman' },
     { id: 3, name: 'Abel', age: 500, gender: 'man' },
     { id: 4, name: 'Caine', age: 400, gender: 'man' }
 ];
 
-var list2 = [
+const list2 = [
     { id: 1, name: 'Adam', age: 800, gender: 'man' },
     { id: 2, name: 'Eve', age: 600, gender: 'woman' },
     { id: 5, name: 'Set', age: 300, gender: 'man' },
@@ -16,24 +16,24 @@ var list2 = [
 ];
 
 exports['intersect list with list'] = function (test) {
-    var result = sl.intersect(list, list, 'id');
+    const result = sl.intersect(list, list, 'id');
     
     test.ok(result);
     test.ok(Array.isArray(result));
     test.equal(result.length, list.length);
     
-    for (var k = 0; k < result.length; k++)
+    for (let k = 0; k < result.length; k++)
         test.equal(result[k].id, list[k].id);
 }
 
 exports['intersect list with second list'] = function (test) {
-    var result = sl.intersect(list, list2, 'id');
+    const result = sl.intersect(list, list2, 'id');
     
     test.ok(result);
     test.ok(Array.isArray(result));
     test.equal(result.length, 2);
     
-    for (var k = 0; k < result.length; k++) {
+    for (let k = 0; k < result.length; k++) {
         test.ok(sl.exist(list, { id: result[k].id }));
         test.ok(sl.exist(list2, { id: result[k].id }));
     }
