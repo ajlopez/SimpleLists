@@ -1,7 +1,7 @@
 
-var sl = require('..');
+const sl = require('..');
 
-var list = [
+const list = [
     { id: 1, name: 'Adam', age: 800, gender: 'man' },
     { id: 2, name: 'Eve', age: 600, gender: 'woman' },
     { id: 3, name: 'Abel', age: 500, gender: 'man' },
@@ -9,7 +9,7 @@ var list = [
 ];
 
 exports['filter name is Adam or name is Eve'] = function (test) {
-    var result = sl.filter(list, { $or: [ { name: 'Adam' }, { name: 'Eve' } ] });
+    const result = sl.filter(list, { $or: [ { name: 'Adam' }, { name: 'Eve' } ] });
     
     test.ok(result);
     test.ok(Array.isArray(result));
@@ -20,7 +20,7 @@ exports['filter name is Adam or name is Eve'] = function (test) {
 }
 
 exports['filter name is Adam or name is Eve and gender is man'] = function (test) {
-    var result = sl.filter(list, { $or: [ { name: 'Adam' }, { name: 'Eve' } ], gender: 'man' });
+    const result = sl.filter(list, { $or: [ { name: 'Adam' }, { name: 'Eve' } ], gender: 'man' });
     
     test.ok(result);
     test.ok(Array.isArray(result));
