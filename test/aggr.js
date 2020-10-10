@@ -1,7 +1,7 @@
 
-var sl = require('..');
+const sl = require('..');
 
-var list = [
+const list = [
     { id: 1, name: 'Adam', age: 800, gender: 'man', children: 2 },
     { id: 2, name: 'Eve', age: 600, gender: 'woman', children: 2 },
     { id: 3, name: 'Abel', age: 500, gender: 'man' },
@@ -9,7 +9,7 @@ var list = [
 ];
 
 exports['aggregate a field by gender'] = function (test) {
-    var result = sl.aggr(list, 'gender', 'age');
+    const result = sl.aggr(list, 'gender', 'age');
     
     test.ok(result);
     test.ok(Array.isArray(result));
@@ -19,7 +19,7 @@ exports['aggregate a field by gender'] = function (test) {
 }
 
 exports['aggregate a field with undefined'] = function (test) {
-    var result = sl.aggr(list, 'gender', 'children');
+    const result = sl.aggr(list, 'gender', 'children');
     
     test.ok(Array.isArray(result));
     test.equal(result.length, 2);
@@ -28,7 +28,7 @@ exports['aggregate a field with undefined'] = function (test) {
 }
 
 exports['aggregate a list of fields'] = function (test) {
-    var result = sl.aggr(list, 'gender', ['age', 'children']);
+    const result = sl.aggr(list, 'gender', ['age', 'children']);
     
     test.ok(result);
     test.equal(result.length, 2);
