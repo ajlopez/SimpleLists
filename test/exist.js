@@ -1,7 +1,7 @@
 
-var sl = require('..');
+const sl = require('..');
 
-var list = [
+const list = [
     { id: 1, name: 'Adam', age: 800, gender: 'man' },
     { id: 2, name: 'Eve', age: 600, gender: 'woman' },
     { id: 3, name: 'Abel', age: 500, gender: 'man' },
