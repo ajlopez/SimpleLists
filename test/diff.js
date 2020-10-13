@@ -1,14 +1,14 @@
 
-var sl = require('..');
+const sl = require('..');
 
-var list = [
+const list = [
     { id: 1, name: 'Adam', age: 800, gender: 'man' },
     { id: 2, name: 'Eve', age: 600, gender: 'woman' },
     { id: 3, name: 'Abel', age: 500, gender: 'man' },
     { id: 4, name: 'Caine', age: 400, gender: 'man' }
 ];
 
-var list2 = [
+const list2 = [
     { id: 1, name: 'Adam', age: 800, gender: 'man' },
     { id: 2, name: 'Eve', age: 600, gender: 'woman' },
     { id: 5, name: 'Set', age: 300, gender: 'man' },
@@ -16,7 +16,7 @@ var list2 = [
 ];
 
 exports['diff list with list'] = function (test) {
-    var result = sl.diff(list, list, 'id');
+    const result = sl.diff(list, list, 'id');
     
     test.ok(result);
     test.ok(Array.isArray(result));
@@ -24,7 +24,7 @@ exports['diff list with list'] = function (test) {
 }
 
 exports['diff list with second list'] = function (test) {
-    var result = sl.diff(list, list2, 'id');
+    const result = sl.diff(list, list2, 'id');
     
     test.ok(result);
     test.ok(Array.isArray(result));
@@ -35,7 +35,7 @@ exports['diff list with second list'] = function (test) {
 }
 
 exports['diff second list with first list'] = function (test) {
-    var result = sl.diff(list2, list, 'id');
+    const result = sl.diff(list2, list, 'id');
     
     test.ok(result);
     test.ok(Array.isArray(result));
