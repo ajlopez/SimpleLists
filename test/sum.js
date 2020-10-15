@@ -1,7 +1,7 @@
 
-var sl = require('..');
+const sl = require('..');
 
-var list = [
+const list = [
     { id: 1, name: 'Adam', age: 800, gender: 'man', children: 2 },
     { id: 2, name: 'Eve', age: 600, gender: 'woman', children: 2 },
     { id: 3, name: 'Abel', age: 500, gender: 'man' },
@@ -9,23 +9,24 @@ var list = [
 ];
 
 exports['sum a field'] = function (test) {
-    var result = sl.sum(list, 'age');
+    const result = sl.sum(list, 'age');
     
     test.ok(result);
     test.equal(result, 800+600+500+400);
 }
 
 exports['sum a field with undefined'] = function (test) {
-    var result = sl.sum(list, 'children');
+    const result = sl.sum(list, 'children');
     
     test.ok(result);
     test.equal(result, 2+2);
 }
 
 exports['sum a list of fields'] = function (test) {
-    var result = sl.sum(list, ['age', 'children']);
+    const result = sl.sum(list, ['age', 'children']);
     
     test.ok(result);
     test.equal(result.age, 800+600+500+400);
     test.equal(result.children, 2+2);
 }
+
