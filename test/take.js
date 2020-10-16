@@ -1,10 +1,10 @@
 
-var sl = require('..');
+const sl = require('..');
 
 exports['take three elements'] = function (test) {
-    var values = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    const values = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
     
-    var taken = sl.take(values, 3);
+    const taken = sl.take(values, 3);
     
     test.ok(taken);
     test.ok(Array.isArray(taken));
